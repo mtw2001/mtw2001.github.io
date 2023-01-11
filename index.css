@@ -21,7 +21,36 @@
 
 body {
   background-color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins";
+  color: black;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 14px;
+}
+
+name {
+  color: black;
+}
+
+navitem {
+  font-size: 30px;
+  color: grey;
+}
+navitem:hover {
+  font-size: 30px;
   color: black;
 }
 
