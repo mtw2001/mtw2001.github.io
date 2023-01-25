@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" >
+    <link rel="stylesheet" href="../../index.css" />
+    <style>
+      a { text-decoration: none; }
+    </style>
+  </head>
+
+    <!-- MENU/NAVBAR -->
+    <center>
+    <h1>
+    <a href ="../../index.html"><name>Michael Wentworth</name></a>
+    <a href ="../projects.html"><navitem style="color: black">Projects</navitem></a>
+    <a href ="../../aboutme/aboutme.html"><navitem>About me</navitem></a>
+    <a href ="../../cheatsheet/cheatsheet.html"><navitem>Cheatsheet</navitem></a>
+    </center>
+
+    <center>
+
+        <h2>MP1: Browser Extension</h2>
+       
+        <h3>Overview</h3>
+
+        <p>
+            For the second mini-project of the course, we were tasked with creating a Chrome extension <br>
+            using HTML, CSS, and Javascript. I decided to create an extension which blocks access to <br>
+            websites from a list of urls that the user can control. <br><br>
+
+            <b>Step 1:</b><br>
+            To begin my extension, I began by reading the Chrome Extension 101 page and creating <br>
+            my manifest.json file. I created a title, description, and simple icon for the extension <br>
+            and began to explore the creation of my extension's popup window through popup.html. <br><br>
+
+            <b>Step 2:</b><br>
+            For the popup window, I wanted the title of the extension, an enable button, a textbox to <br>
+            enter URLs to block, and a save button to save the updated list of URLs. <br>
+            These elements were easy to create through some Googling of HTML documenation. <br>
+            Now, it was time to get the extension to actually do something! <br><br>
+            
+            <b>Step 3:</b><br>
+            After this, I spent a significant amount of time organizing my site's various folders to<br>
+            be formatted correctly. I had to resolve the issue of the navigation bar breaking when<br>
+            being copied over to a new HTML page within my site due to directory issues. This<br>
+            required the use of ".." multiple times to refer to different files and pages. Once I<br>
+            squared this issue away, I began adding content to each of my pages, which was rather<br>
+            straight forward with just some simple HTML.<br><br>
+
+            <b>Step 4:</b><br>
+            Now, I began messing around in Javascript, specifically in the popup.js file. I learned<br>
+            through the provided Javascript documentation and hours of Googling how to set up<br>
+            listener events for when the popup was loaded, when the enable checkbox was clicked,<br>
+            and when the save button was pressed. I now needed to find a way to save these as<br>
+            variables so that the extension could save content when the popup is closed and opened<br>
+            again. To accomplish this, I implemented the chrome.storage API, which was quite difficult<br>
+            to figure out. Now, I could store the status of the enable button and the content of the URL<br>
+            textbox and retrieve this status when the popup is opened again. This process took some<br>
+            time, as the syntax for the storage API confused me quite a bit. Here is a progress photo <br>
+            of what the extension looked like at this time.<br><br>
+            
+            <img src="./progress.png" alt="Progress Photo" width="750" height="auto"><br><br>
+
+            <b>Step 5:</b><br>
+            At this point, I was pretty lost on how to block websites from this list of URLs. I searched<br>
+            Google for quite some time and eventually found the chrome.tabs API, which seemed like it might<br>
+            be what I was looking for. Implemented this API was a hassle, and I was quite confused by whether<br>
+            I needed a content script or a background script running in order to implement it. This is when I<br>
+            stumbled across a tutorial that showed the necessary background script to accomplish what I had<br>
+            in mind. This tutorial led me back to the beginning, as it turned out I had set up a lot of my <br>
+            manifest.json and popup files incorrectly to allow my intended behavior. I credit this tutorial <br>
+            heavily, as my learning process relied on it for the rest of my project and my background.js file <br>
+            is almost entirely the same as what is shown in the tutorial.<br><br>
+
+            <a href ="https://dev.to/penge/learn-the-most-useful-chrome-apis-by-creating-block-site-chrome-extension-2de8">Website Blocker Tutorial</a> <br><br>
+
+            Even with this tutorial at my disposal, implementing and troubleshooting my code took hours and <br>
+            was quite the headache. After hours of referencing the tutorial and other resources related to <br>
+            Javascript and Chrome extensions, I was able to get the extension to block websites from the list! <br>
+            I then found code for a fancier toggle in the form of a CSS toggle switch. I implemented this <br>
+            onto my popup.html and popup.css and also changed the font to my current favorite, "Poppins" and <br>
+            added the logo to the popup window. <br><br>
+
+            My extension was now completed. Once again, I would like to give a huge shoutout to the tutorial <br>
+            created by Pavel Bucka, as it helped me immensely and influenced a large portion of my extension's <br>
+            code.<br><br>
+
+            <img src="./final.png" alt="Final Photo" width="750" height="auto"><br><br>
+
+            <img src="./final.gif" alt="Final Gif" width="750" height="auto"><br><br>
+        </p>
+
+        <h3>Issues</h3>
+
+        <p>
+            1. The first issue that I encountered was using the chrome.storage API. I could not<br>
+            figure out how to get the values out of storage after setting them. I initially tried<br>
+            using the window.storage option, but realized that my background script would not be <br>
+            able to access these values, so I watched many YouTube videos and eventually figured <br>
+            out how to retrieve the values through chrome.storage.local.get.<br><br>
+
+            2. My second issue occured when creating my background script file. I originally <br>
+            had a content script file and was confused on how to accomplish what I desired. <br>
+            Once again, YouTube and the internet saved the day and explained the differing<br>
+            functions of background and content scripts to me. Manifest version differences <br>
+            also caused some confusing at this stage, as the manifest.json requires different<br>
+            syntax for each version when adding a content or background script.<br><br>
+
+            3. My third issue was related to the background script in general. I was quite lost<br>
+            on how to use the chrome.tabs API and the different functions available. Documentation <br>
+            on the API site was very limited and didn't explain much at a low-level. YouTube and the <br>
+            previously credited tutorial helped a lot in this stage. My entire background.js file <br>
+            is nearly the same as the one in the tutorial, as it worked flawlessly with what I had<br>
+            already created in my popup files.<br><br>
+        </p>
+
+        <h3>Sources</h3>
+        
+        <p>
+          <a href ="https://dev.to/penge/learn-the-most-useful-chrome-apis-by-creating-block-site-chrome-extension-2de8">Website Blocker Tutorial</a> <br>
+          <a href ="https://www.w3schools.com/howto/howto_css_switch.asp">CSS Toggle Switch</a> <br>
+          <a href ="https://developer.chrome.com/docs/extensions/mv3/">Chrome Extension Documentation</a> <br>
+          <a href ="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN Javascript Documentation</a> <br><br>
+
+          These four sources were the most useful in the creation of my project, but there were <br>
+          many more that I referenced briefly. This project taught me a ton about Javascript, <br>
+          HTML, and CSS, and I am grateful to all of the online sources that clarified the various <br>
+          details for me!
+
+        </p>
+    </center>
