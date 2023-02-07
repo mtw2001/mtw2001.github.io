@@ -13,6 +13,7 @@
 
 .picture-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   width: 80%;
   margin: auto;
@@ -58,4 +59,11 @@ navitem:hover {
   width: 80%;
   margin-top: 5rem;
   margin: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  grid-template-rows: 250px 250px;
+  justify-content: center;
 }

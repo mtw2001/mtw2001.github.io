@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" >
+    <link rel="stylesheet" href="../../index.css" />
+    <style>
+      a { text-decoration: none; }
+    </style>
+  </head>
+
+    <!-- MENU/NAVBAR -->
+    <center>
+    <h1>
+    <a href ="../../index.html"><name>Michael Wentworth</name></a>
+    <a href ="../projects.html"><navitem style="color: black">Projects</navitem></a>
+    <a href ="../../aboutme/aboutme.html"><navitem>About me</navitem></a>
+    <a href ="../../cheatsheet/cheatsheet.html"><navitem>Cheatsheet</navitem></a>
+    </center>
+
+    <center>
+
+        <h2>MP2: Creative Coding Explorations</h2>
+
+        <h3>Sketch Gallery</h3>
+        <div class="grid-container">
+            <div class="grid-item">
+                <a href = "./s1/index.html">
+                    <img src="s1.png" alt="Sketch 1" width="250" height="auto">
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href = "./s2/index.html">
+                    <img src="s2.png" alt="Sketch 2" width="250" height="auto">
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href = "./s3/index.html">
+                    <img src="s3.gif" alt="Sketch 3" width="250" height="auto">
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href = "./s4/index.html">
+                    <img src="s4.gif" alt="Sketch 4" width="250" height="auto">
+                </a>
+            </div>
+            <div class="grid-item">
+                 <a href = "./s5/index.html">
+                    <img src="s5.gif" alt="Sketch 5" width="250" height="auto">
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href = "./s6/index.html">
+                    <img src="s6.gif" alt="Sketch 6" width="250" height="auto">
+                </a>
+            </div>
+        </div>
+
+        <h3>Overview</h3>
+
+        <p>
+            This assignment was an introduction to the p5.js Javascript library, which has many features <br>
+            for creating art. The project consists of six sketches of varying complexity. Below is a <br>
+            description of each of the six sketches. <br><br>
+
+            <a href = "./s1/index.html"><b>Sketch 1:</b></a><br>
+            Sketch 1 is a static image. My sketch creates a target shape with three red rings generated<br>
+            center of the page. It uses a for loop to generate multiple circle, alternating between red<br>
+            and white, starting at the biggest circle in order to create the target effect.<br><br>
+
+            <a href = "./s2/index.html"><b>Sketch 2:</b></a><br>
+            Sketch 2 had to generate a piece of static artwork using randomness. I chose to have my sketch<br>
+            generate 100 circles, with random sizes, located randomly on the canvas, with random colors.<br>
+            Every time the page is refreshed, the circles will be regenerated into a new random pattern.<br><br> 
+            
+            <a href = "./s3/index.html"><b>Sketch 3:</b></a><br>
+            Sketch 3 had to create an infinite loop that will change over time continuously. I chose to <br>
+            build upon my second sketch and infinitely generate circles of random size and color around <br>
+            the page and create other smaller circles inside of each circle. <br><br> 
+
+            <a href = "./s4/index.html"><b>Sketch 4:</b></a><br>
+            Sketch 4 had to respond to human input. I created a simple drawing panel that places small <br>
+            circles whenever the mouse is being clicked. The user can click and drag to draw lines and <br>
+            the color of the line will fluctuate through the rainbow of RGB colors.<br><br>
+
+            <a href = "./s5/index.html"><b>Sketch 5:</b></a><br>
+            Sketch 5 had to output audio to the browser. To accomplish this, I created a canvas where<br>
+            the user drags a circle around the page. Horizontal position on the page affects the frequency<br>
+            of the tone played, and vertical position affects the amplitude of the tone. The tone will be<br>
+            played whenever the mouse is being clicked. Also, the color of the circle will change with<br>
+            horizontal and vertical position.<br><br>
+
+            <a href = "./s6/index.html"><b>Sketch 6:</b></a><br>
+            Sketch 6 had to combine audio output and user input. I created a canvas with 9 different<br>
+            colored circles on the center of the window. Each circle has a different color and produces<br>
+            a different tone. Clicking a circle will play its assigned tone for a brief moment and changed<br>
+            the background of the canvas to the color of the clicked circle. This sketch was the most time<br>
+            consuming out of the 6. Below is a progress picture of this sketch in its early stages.<br><br>
+
+            <img src="./progress.png" alt="Progress Photo" width="750" height="auto"><br><br>
+        </p>
+
+        <h3>Issues</h3>
+
+        <p>
+            1. My first issue arose when I created sketch 4. I struggled to find a way to get the line<br>
+            color to cycle through the rainbow. To accomplish this I had to reference an only RGB color<br>
+            picker and analyze how the RGB code changed as the rainbow is cycled through. I then replicated<br>
+            this in my code inside of an array for the current color and had the value change by 1 every time<br>
+            a circle was drawn, eventually cycling back to the original color of red (255, 0, 0).<br><br>
+
+            2. My second large obstacle occured when creating sketch 6. I wanted to have 9<br>
+            clickable buttons on the screen, but I was unable to find a way to tell which button was<br>
+            being clicked. After searching the web for a bit, I decided that a good course of action<br>
+            would be to make each circle an object of class "button". I was then able to make a function<br>
+            for what happens when each circle was clicked on by referencing the variables required by the<br>
+            constructor function.<br><br>
+
+            3. The third and final obstacle of this mini-project occured during the write-up process.<br>
+            I struggled for a while to create a grid layout for my gallery and on how to link to each<br>
+            sketch in a separate window that fits to the width and height of the window. This required<br>
+            a lot of Googling and reading about CSS Grids. For resizing the canvas appropriately, I had<br>
+            to go back through each of my sketches and change variables so that the sketch would properly<br>
+            resize to the window's width and height. I also had to add a function that would resize the<br>
+            canvas if the page size is altered while viewing a sketch.<br><br>
+        </p>
+
+
+        <h3>Ideas for the Future</h3>
+        
+        <p>
+            1. I would love to explore the p5.sound library further and perhaps recreate popular songs<br>
+            in a sketch. This was an idea that I had when creating my sound sketches, but I was a bit<br>
+            confused on the science behind frequencies, so I chose to keep it simple.<br>
+            2. I would like to create a full drawing panel with different tools. Sketch 3 was a basic<br>
+            drawing panel, but I would love to expand on this for a future project.
+            <br><br><br><br><br><br><br>
+        </p>
+    </center>
