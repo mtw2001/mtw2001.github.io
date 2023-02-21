@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" >
+    <link rel="stylesheet" href="../../index.css" />
+    <style>
+      a { text-decoration: none; }
+    </style>
+  </head>
+
+    <!-- MENU/NAVBAR -->
+    <center>
+    <h1>
+    <a href ="../../index.html"><name>Michael Wentworth</name></a>
+    <a href ="../projects.html"><navitem style="color: black">Projects</navitem></a>
+    <a href ="../../aboutme/aboutme.html"><navitem>About me</navitem></a>
+    <a href ="../../cheatsheet/cheatsheet.html"><navitem>Cheatsheet</navitem></a>
+    </center>
+
+    <center>
+
+        <h2>MP3: Interactive Application Toolchain</h2>
+        <a href = "https://mtw2001.github.io/snakegame/">
+            <img src="./final.gif" alt="Final Game Gif" width="400" height="auto"><br>
+            <h2>Play my game here!</h2><br><br>
+        </a>
+        <h3>Overview</h3>
+
+        <p>
+            For this mini-project, I created a simple version of the classic snake game using p5 and p5play<br>
+            libraries. This was implemented through Javascript and HTML coding. Below, I will go into detail<br>
+            on how I created this game. <br><br>
+
+            <b>Step 1:</b><br>
+            I began this project by looking at different versions of snake games online. I decided to begin<br>
+            developing my game by creating the classic grid background. I settled on a light and dark blue<br>
+            color scheme and wrote p5.js code to create this checkerboard pattern. The grid is 24x24 on a<br>
+            canvas size of 480x480.<br>
+            <img src ="./grid.PNG" alt = "Grid Image" width="400" height="auto"><br><br>
+
+            <b>Step 2:</b><br>
+            Next, I began creating the snake object and experimenting with ways to control it. This required<br>
+            me to create a snake class within my javascript, where I would be able to implement many functions<br>
+            for use in my game logic. I began by creating a simple square that would move in the last pressed<br>
+            arrow key direction. This "snake" moved much too fast for the game, so I had to figure out how<br>
+            to change the framerate of the game to make it move slower. Here is a gif of the original<br>
+            movement speed.<br>
+            <img src ="./progress.gif" alt = "Fast Snake Gif" width="400" height="auto"><br><br>
+            
+            <b>Step 3:</b><br>
+            Once I figured out the framerate issues, it was time to begin adding logic and more features<br>
+            to the game. The first addition was a "food" item that would spawn on a random square of the grid<br>
+            This was pretty easy to implement using the random function to select a square on the grid.<br>
+            What was more difficult, was detecting when the snake ran into the food and moving the food<br>
+            to a new random square. This was implemented through my checkFoodCollision function.<br><br>
+
+            <b>Step 4:</b><br>
+            Step four was quite difficult. It was increasing the length of the snake for each food eaten<br>
+            and getting the lengthened snake to follow the path of the head around the grid. This feature<br>
+            was addressed mainly through turning the snake into a vector of multiple squares, so I could<br>
+            increase or decrease the size by adding or removing elements from the vector. The logic involved<br>
+            in getting the snake's body to follow its head was pretty confusing, and I looked at the code<br>
+            for many different online snake games to figure this out. This was all implemented through<br>
+            the various functions of my snake class, such as grow(), draw(), update(), and the constructor<br><br>
+
+
+            <b>Step 5:</b><br>
+            Step five was creating the end conditions for my game. I wanted the game to end if the snake ran<br>
+            into the walls of the canvas, or into its body. This was actually pretty simple to implement, and<br>
+            occurs in the checkCollision function of the snake class. This function detects both wall and body<br>
+            collisions and returns the value of true, which triggers the gameOver function. I then created the<br>
+            "Game Over" screen, which is entirely red and says game over. I then implemented a button that would<br>
+            refresh the page and allow the user to play again. This was tricky and actually required the<br>
+            implementation of an HTML button instead of a p5 element.<br><br>
+
+            <b>Step 6:</b><br>
+            The final step of creating my game was to add some necessary game features, such as a score counter<br>
+            and some fun sounds. I added a score counter to the bottom right of the screen, which would be<br>
+            initialized to zero every time the site was reloaded and increase by one for each piece of food<br>
+            eaten. This would also display on the game over screen so users can see their score. I then added<br>
+            a fun noise for whenever the snake eats a piece of food and a game over sound when the game ends.<br>
+            Finally, I decided to make the game more difficult as the score increases by ramping up the frame<br>
+            rate correlating to the players score. This will make the snake move faster and require faster<br>
+            reaction speed to achieve higher scores.<br><br>
+
+            <b>Step 7:</b><br>
+            Now, it was time to publish my website using the developer toolchain walkthrough. This actually proved<br>
+            to be pretty confusing and took me longer than I anticipated. After following the tutorial from class<br>
+            and rereading all of the class Discord discussions, I was able to get my game to show up at my intended<br>
+            URL on my GitHub pages site. However, there was one large issue that took me a while to figure out.<br>
+            When I hosted my site locally, everything worked perfectly, but when I hosted in on GitHub pages,<br>
+            the game would break and freeze whenever the snake ran into a piece of food. This turned out to be<br>
+            an issue with playing audio on a website. After solving this issue, my game was finally working and<br>
+            finished!<br><br>
+        </p>
+
+        <h3>Issue Deep Dive</h3>
+
+        <p>
+            The largest issue I ran into was with p5 sound and my game breaking when I played it on GitHub pages.<br>
+            The issue here was that websites aren't allowed to play sound until the user interacts with the website.<br>
+            This is a feature that is in place to prevent websites from immediately bombarding the user with videos<br>
+            or audio that they do not want to hear. This issue stumped me for a while, but I figured out through<br>
+            online forums after a while that I needed to load my sounds through a preload() function at the beginning<br>
+            of my javascript file. This took a couple tries to implement correctly, but eventually resolved my issue<br><br>
+
+            Another large issue that I encountered was getting the snake body to follow the head as it moved around<br>
+            the page. Once again, the internet assisted me and led me in the right direction. To accomplish what I<br>
+            wanted, I had to restructure the way that my snake object was formed into a vector of different pieces.<br>
+            This meant that I had to rewrite most of my code to interact with the snake as a vector variable.<br>
+            I had to create many different functions to allow the snake to move properly, such as draw(), update(),<br>
+            and grow(), each contributing a small part to the overall function of my snake. I really thought that<br>
+            a game as simple as snake would be very simple to make, but there were many hiccups that gave me trouble<br>
+            throughout the process of creating this game.<br><br>
+        </p>
+
+
+        <h3>Ideas for the Future</h3>
+        
+        <p>
+            Improving this game, in my opinion, would entirely revolve around visuals. The game is a 24x24 grid<br>
+            of squares, which is not super visually appealing. I would love to improve it by making the snake<br>
+            look like an actual snake and make the food pictures of fruit such as apples and oranges. My ideal<br>
+            game would look similar to the Google Snake game that comes up when you search Snake on Google.<br><br>
+            <img src ="./capture.PNG" alt = "Google Snake Game" width="400" height="auto"><br><br>
+            This version of the game is very visually appealing and has effects for when the snake eats fruit<br>
+            or runs into the wall. I'm not sure how difficult it would be to add features like this, but<br>
+            I think it would do a lot to improve the user experience of the game.
+            <br><br><br><br><br><br><br>
+        </p>
+    </center>
