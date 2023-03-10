@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" >
+    <link rel="stylesheet" href="../../index.css" />
+    <style>
+      a { text-decoration: none; }
+    </style>
+  </head>
+
+    <!-- MENU/NAVBAR -->
+    <center>
+    <h1>
+    <a href ="../../index.html"><name>Michael Wentworth</name></a>
+    <a href ="../projects.html"><navitem style="color: black">Projects</navitem></a>
+    <a href ="../../aboutme/aboutme.html"><navitem>About me</navitem></a>
+    <a href ="../../cheatsheet/cheatsheet.html"><navitem>Cheatsheet</navitem></a>
+    </center>
+
+    <center>
+
+        <h2>FP1: Final Project Prototype</h2>
+       
+        <h3>Overview</h3>
+
+        <p>
+            This initial version of my final project includes the basic interaction with Spotify API<br>
+            that I will be expanding on for the final submission. Working with this API and the oAuth 2.0<br>
+            flow proved to be a challenge and was very frustrating, but I think I am headed in the right<br>
+            direction with this prototype. It is hosted on this site at the link below. Users can log-in<br>
+            to their Spotify account and if a song is playing on their Spotify account, the name and artist<br>
+            of that song will be console logged.<br><br>
+
+            <a href="https://mtw2001.github.io/projects/fp1/spotitubev2/index.html">PROJECT HERE</a><br>
+            <a href="https://github.com/mtw2001/spotitubev2">GITHUB HERE</a><br><br>
+        </p>
+
+        <h3>Development Process</h3>
+        
+        <p>
+            I began by revisiting my previously created project that uses the Spotify API and began<br>
+            converting this from a Python project to Javascript. Tackling this conversion proved to be<br>
+            the bulk of this prototype. The Spotify API and specifically the oAuth 2.0 flow was even<br>
+            trickier than I remembered. I had to rethink nearly every aspect of how the web app was<br>
+            created so that it could work with Javascript. This took a lot of head scratching, Googling<br>
+            and frustration. I came across a usefull tutorial, available <a href="https://www.youtube.com/watch?v=1vR3m0HupGI&ab_channel=MakerAtPlayCoding">here</a> that helped quite<br>
+            a bit with the oAuth problems I was facing.<br><br>
+
+            I had originally planned to fully recreate my project in Javascript for the prototype,<br>
+            but was unable to do so in a timely manner while balancing other classes and final projects<br>
+            that were do this week. I think I tackled the most challenging part of the project though.<br>
+        </p>
+
+        <h3>Issue Deep Dive</h3>
+
+        <p>
+            The main issue I ran into was one that I remembered from when I created the app in Python.<br>
+            The Spotify API authorization process is very tricky and complicated. It requires a specific<br>
+            redirect url when the user authenticates the app, which much also be added to a list on the<br>
+            Spotify API dashboard. This puzzled be for quite some time until I remembered over a year<br>
+            ago when I struggled with this same issue. I think my previous struggles are coming back<br>
+            to me, so I am confident I will move more hastily towards my final submission.<br><br>
+        </p>
+
+        <h3>Ideas for Future Work.</h3>
+
+        <p>
+            1. I still need to implement the YouTube API functionality, which will display the video<br>
+            for the song the user is playing on Spotify. This won't be too difficult, however I need to<br>
+            tackle the issue of YouTube APIs quota limit, which limits the amount of searches the user<br>
+            can make through YouTube API per day.<br><br>
+
+            2. I also need to still add CSS styling, and use Javascript to manipulate the HTML of the page.<br>
+            For example, the user should stay logged into the web app, and "log in" button should change<br>
+            to "log out" when the user is logged into Spotify.<br><br>
+
+            3. Further, I need to fully implement all of the error preventing features from my previous app<br>
+            as well as improve upon these and add new features such as dark/light mode, auto-fullscreen, and more.<br><br>
+        </p>
+
+        <h3>Kudos</h3>
+
+        <p>
+            I would like to thank the Youtube video that was linked above for helping me alot with the oAuth flow.<br><br>
+        </p>
+
+        <h3>Questions</h3>
+
+        <p>
+            My project scope hasn't changed since my project proposal, although I accomplished less for this initial<br>
+            prototype than I had anticipated. I plan to get everything done by next Friday.<br><br>
+
+            The oAuth process was definitely a setback, also learning how to access APIs through Javascript was tricky.<br><br>
+
+            This hasn't changed much, I didn't really have time to work on implementation for this prototype.<br><br>
+        </p>
+    </center>
+    </center>
