@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" >
+    <link rel="stylesheet" href="../../index.css" />
+    <style>
+      a { text-decoration: none; }
+    </style>
+  </head>
+
+    <!-- MENU/NAVBAR -->
+    <center>
+    <h1>
+    <a href ="../../index.html"><name>Michael Wentworth</name></a>
+    <a href ="../projects.html"><navitem style="color: black">Projects</navitem></a>
+    <a href ="../../aboutme/aboutme.html"><navitem>About me</navitem></a>
+    <a href ="../../cheatsheet/cheatsheet.html"><navitem>Cheatsheet</navitem></a>
+    </center>
+
+    <center>
+
+        <h2>FP2: Final Project</h2>
+       
+        <h3>Overview</h3>
+
+        <p>
+            My final project is a web application that I have named SpotiTube. This application<br>
+            plays the music video for the song that a user is listening to on Spotify. This works<br>
+            by utilizing Spotify and Google APIs to gather information and display it to the user.<br>
+            Users can log in to their Spotify account and authorize the app to access the song that<br>
+            they are currently listening to. Then, the web application will use that information to<br>
+            search Google for the first YouTube result, which provides the music video for the song.<br>
+            Videos are shown to the user starting at the current time of the song being played on<br>
+            Spotify, meaning that if the site is loaded 30 seconds into a song, the video will start<br>
+            30 seconds in. Users also have the option to log out from their Spotify account and enable<br>
+            or disabled a dark mode feature. To update the site and display a new video, the site must be<br>
+            refreshed.<br><br>
+
+            <a href="https://mtw2001.github.io/spotitube-final">PROJECT HERE</a><br>
+            <a href="https://github.com/mtw2001/spotitube-final">GITHUB HERE</a><br><br>
+        </p>
+
+        <h3>Development Process</h3>
+        
+        <p>
+            This project was an improved version of a project I made for HCDE 310, which was coded entirely<br>
+            in Python and deployed using PythonAnywhere. I began this project by revisiting that project.<br>
+            To start, I needed to figure out how to go through the OAuth 2.0 authorization flow for Spotify<br>
+            API in Javascript. This was very tricky and seemed impossible to get working, but thanks to a<br>
+            YouTube tutorial available 
+            <a href="https://www.youtube.com/watch?v=1vR3m0HupGI&ab_channel=MakerAtPlayCoding">here</a> 
+            I was able to figure it out eventually.<br><br>
+
+            At this point, I had finished my first prototype and had the web application successfully<br>
+            gathering the song being played from Spotify. I then took a step back and thought about the<br>
+            overall system of the web app. I felt like I was in over my head and my code was very sloppy<br>
+            and unorganized. I then decided to rewrite what I had created using JQuery, which would<br>
+            allow for cleaner API calls and allow me to update the HTML page efficiently. Learning the<br>
+            basics of JQuery took a considerable amount of time, as well as rewriting my first prototype.<br>
+            I found a very useful YouTube series on the basics of JQuery which is available
+            <a href="https://www.youtube.com/watch?v=3nrLc_JOF7k&ab_channel=TraversyMedia">here</a>.<br><br>
+            
+            Now, it was time to tackle the YouTube API part of the project, which was one of the issues<br>
+            with my first version of this web application from the previous class. I began exploring<br>
+            YouTube API documentation about quota limits. This means that there is a limited amount of<br>
+            YouTube API calls that an application can make per day before it is cut off. This can be<br>
+            avoided by requesting a higher quota limit. However, YouTube states that it won't give<br>
+            this increase for personal or education projects. So, I had to once again take a step<br>
+            back and think about other options. I decided to use a Google search API, which would<br>
+            allow me to search for only www.youtube.com links. I implemented this successfully,<br>
+            and thought that there was not a quota limit on these API calls. However, I was wrong and it<br>
+            had very similar limits to the direct YouTube API. This is one of the shortcomings of my project.<br><br>
+
+            <img src="progress.PNG" alt="Interface without CSS Styling" width="750" height="auto"><br><br>
+
+            After implementing the Google search API, it was time for CSS and some JQuery to make everything<br>
+            work together. I made a login button that would prompt users to login to Spotify and would also<br>
+            allow them to log out after. I also added some CSS styling such as fonts, colors, centering, and<br>
+            text size. I then made essentially a home page and a page for when the user is logged in to Spotify.<br>
+            This was accomplished by using JQuery to hide and show certain HTML elements based on the state of<br>
+            the application. Finally, I had time to implement a dark mode which simply changes the background<br>
+            of the page and the text color of the text in the body to white.<br><br>
+
+            Finally, It was time to package my web app together and upload it to GitHub Pages. This process<br>
+            gave me the most difficulties, but my application is now live at the above link! If it does not<br>
+            appear to be working, this may mean that the Google Search API quota has been exceeded for the day.<br>
+        </p>
+
+        <h3>Issue Deep Dive</h3>
+
+        <p>
+            After I uploaded my project to GitHub pages, my CSS and images were not loading. I spent a couple<br>
+            hours trying to trouble shoot this online. I was getting 404 errors in my console whenever the site<br>
+            was loaded, stating that the css file and .png files could not be found. This was strange because<br>
+            those files were visible on my GitHub repository, but would still not load on the GitHub Pages site.<br><br>
+
+            <img src="error.PNG" alt="CSS and PNG errors" width="750" height="auto"><br><br>
+
+            I eventually came up with a nifty workaround. I pulled the direct link to my images from my GitHub<br>
+            repository and linked to an online version of them rather than pathing to them in my repository.<br>
+            For the CSS file however, this method would not work. I decided to include all of my CSS directly<br>
+            in my index.html file. This isn't ideal or good practice, but I could not figure out another way<br>
+            to get my site to display correctly.<br><br>
+        </p>
+
+        <h3>Ideas for Future Work.</h3>
+
+        <p>
+            At the moment, the only way I would like to improve this site is to fix the issues with the API<br>
+            quota limits. It is pretty disappointing that my site may not work at times, and is something<br>
+            I would like to fix before including this project on my portfolio.<br><br>
+
+            Also, I would love to further iterate upon my CSS styling of the site. Other aspects took up<br>
+            a lot of my time for this project, and CSS was left pretty basic. This is something I could<br>
+            update in my free time and play around with.<br><br>
+        </p>
+
+        <h3>Kudos</h3>
+
+        <p>
+            I would like to thank the Youtube videos that are linked above for helping me alot with the oAuth flow<br>
+            and learning the basics of JQuery.<br><br>
+        </p>
+
+        <h3>Reflection</h3>
+
+        <p>
+            Overall, I think this project was a huge success! I was unsure if I would be able to get this project<br>
+            working without the help of Python running in the background, but I was! There were a few shortcomings<br>
+            such as the API quota issues. Also, I decided to not use Firebase, as it would not really add much to<br>
+            the application. Additionally, I had planned to include features such as auto-fullscreen for videos,<br>
+            but there are strict rules on how videos and sounds can be played on websites, and the features<br>
+            I planned were not possible. Finally, I decided to not have the site refresh on its own when the song<br>
+            on Spotify is played. This is because of the API quota issues. Keeping this requiring a manual refresh<br>
+            of the site will decrease the amount of API calls when the site is left open.<br><br>
+        </p>
+    </center>
+    </center>
